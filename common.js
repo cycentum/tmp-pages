@@ -102,9 +102,16 @@ function template()
 	let container=document.body.getElementsByClassName("container")[0];
 	container.appendChild(document.getElementById("main"));
 	
-	url=window.location.href;
+	let url=window.location.href;
 	console.log(url);
 	console.log(url.split("/"));
+
+	let url_split=url.split("/");
+	if(url_split[url_split.length-1].startsWith("index.html"))
+	{
+		url_split[url_split.length-1]="";
+		history.replaceState(null, "", url_split.join("/"));
+	}
 }
 
 
