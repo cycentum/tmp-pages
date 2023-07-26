@@ -103,15 +103,14 @@ function template()
 	container.appendChild(document.getElementById("main"));
 	
 	let url=window.location.href;
-	console.log(url);
-	console.log(url.split("/"));
-
 	let url_split=url.split("/");
 	if(url_split[url_split.length-1].startsWith("index.html"))
 	{
 		url_split[url_split.length-1]="";
 		history.replaceState(null, "", url_split.join("/"));
 	}
+
+	console.log(window.location.href);
 }
 
 
