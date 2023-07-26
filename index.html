@@ -1,92 +1,15 @@
-<script type="importmap">
-	{
-	  "imports": {
-		"vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
-	  }
-	}
-  </script>
-
-  <div id="container-1">
-	<div>
-		{{ message }}
-	</div>
-</div>
-<div id="container-2">
-	<div>
-		<button @click="count++">{{ count }}</button>
-	</div>
-</div>
-<div id="container-3">
-	<div>
-		{{ vtuber }}
-	</div>
-</div>
+<!DOCTYPE html>
 
 <script>
-
-	let langs=navigator.languages;
-	for(var i=0; i<langs.length; ++i)
-	{
-		console.log(langs[i]);
-	}
-	let lang="en";
-	for(var i=0; i<langs.length; ++i)
-	{
-		if(langs[i].startsWith("ja"))
-		{
-			lang="ja";
-			break;
-		}
-		else if(langs[i].startsWith("en"))
-		{
-			lang="en";
-			break;
-		}
-	}
-
+	let la_text={
+		"title":[
+			["any", "cycentum.com"],
+		],
+	};
 </script>
 
+<div id="main">
+	aaa
+</div>
 
-
-<script type="module">
-	import { createApp } from 'vue'
-
-	const app1 = createApp({
-		data() {
-			return {
-				message: 'Hello Vue!'
-			}
-	}
-})
-app1.mount('#container-1')
-
-const app2 = createApp({
-	data() {
-			return {
-				count: 0
-			}
-	},
-	mounted() {
-    console.log(`The initial count is ${this.count}.`)
-  }
-})
-app2.mount('#container-2')
-
-const app3 = createApp({
-    data() {
-		return {
-        vtuber: []
-		}
-    },
-    mounted() {
-        fetch('./sample.json')
-            .then(response => {
-                return response.json();
-            })
-            .then(json => {
-                this.vtuber = json.vtuber;
-            })
-    }
-})
-app3.mount('#container-3')
-</script>
+<script src="./common.js"></script>
